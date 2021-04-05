@@ -11,4 +11,5 @@ urlpatterns = [
     path('logout/', views.logout2,name="logout"),
     path('pre/', views.pre,name="pre"),
     path('register/', views.register,name="pre"),
+    path('forecast/', views.forecast,name="forecast"),
 ]

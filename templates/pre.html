@@ -10,7 +10,7 @@
             <div class="input-group mb-3 col-md-4">
                 <select class="form-select" id="inputGroupSelect02" name="symbol_name" required>
                     <option selected>Choose...</option>
-                    <option value="ADANIPORTS">Adani Ports and Special Economic Zone Ltd.</option>
+                    <option value="ADANIPORTS" selected>Adani Ports and Special Economic Zone Ltd.</option>
                     <option value="ASIANPAINT">Asian Paints Ltd.</option>
                     <option value="AXISBANK">Axis Bank Ltd.</option>
                     <option value="SBIN">SBIN</option>
@@ -55,6 +55,10 @@
             </tbody>
         </table>
     </div>
+
+    {% if chart %}
+        <img src="data:image/png;base64, {{ chart|safe }}">
+    {% endif %}
 
 {% endblock body %}
 

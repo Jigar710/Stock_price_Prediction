@@ -32,9 +32,8 @@
     }
 
     body {
-        display: flex;
-        align-items: center;
-        padding-top: 40px;
+        display: block;
+
         padding-bottom: 40px;
         background-color: #f5f5f5;
     }
@@ -78,7 +77,7 @@
 
 {% if messages %}
     {% for message in messages %}
-        <div class="alert alert-{{ message.tags }} alert-dismissible fade show fixed-top" role="alert">
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
             <strong>{{ message }}</strong>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -89,23 +88,29 @@
 <br>
 <br>
 <main class="form-signin">
-  <form method="post">
-      {% csrf_token %}
-    <img class="mb-4" src="/static/logo.png" alt="" width="72" height="70" style="margin-left: 35%">
-    <h1 class="h3 mb-3 fw-normal" style="margin-left: 20%">Register as User</h1>
-    <label for="inputEmail" class="visually-hidden">Your Name</label>
-    <input type="text" id="inputEmail" name="reg_username" class="form-control" placeholder="User name" required autofocus>
-      <label for="inputEmail" class="visually-hidden mt-3">Email</label>
-    <input type="text" id="inputEmail" name="reg_email" class="form-control" placeholder="User name" required>
-      <label for="inputPassword" class="visually-hidden mt-3">Password</label>
-    <input type="password" id="inputPassword" name="reg_password" class="form-control" placeholder="Password" required>
+    <form method="post">
+        {% csrf_token %}
+        <img class="mb-4" src="/static/logo.png" alt="" width="72" height="70" style="margin-left: 35%">
+        <h1 class="h3 mb-3 fw-normal" style="margin-left: 20%">Register as User</h1>
+        <label for="inputEmail" class="visually-hidden">Your Name</label>
+        <input type="text" id="inputEmail" name="reg_username" class="form-control" placeholder="Enter Your Name" required
+               autofocus>
+        <label for="inputEmail" class="visually-hidden mt-3">Email</label>
+        <input type="text" id="inputEmail" name="reg_email" class="form-control " placeholder="Enter Your Email Address" required>
 
-    </div>
-    <button class="w-100 btn btn-lg btn-primary my-4" type="submit">Register</button>
+        <label for="inputPassword" class="visually-hidden mt-3">Password</label>
+        <input type="password" id="inputPassword" name="reg_password" class="form-control" placeholder="Password"
+               required>
 
-  </form>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary my-4" type="submit">Register</button>
 
+    </form>
+
+    <a href="/login" class="w-100 btn btn-primary btn-lg" tabindex="-1" role="button" aria-disabled="true">Login</a>
     <p class="mt-5 mb-3 text-muted">&copy; 2021–2030</p>
+
+
 </main>
 
 <!-- Optional JavaScript -->

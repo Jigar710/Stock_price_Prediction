@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %}Forecast{% endblock title %}
+{% block current_forecast %}active{% endblock current_forecast %}
+{% block body %}
+    <h1>This is forecast.html</h1>
+    {% if chart %}
+        <img src="data:image/png;base64, {{ chart|safe }}">
+    {% endif %}
+{% endblock body %}
