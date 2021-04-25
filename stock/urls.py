@@ -12,4 +12,5 @@ urlpatterns = [
     path('pre/', views.pre,name="pre"),
     path('register/', views.register,name="pre"),
     path('forecast/', views.forecast,name="forecast"),
+    path('profile/', views.profile,name="profile"),
 ]

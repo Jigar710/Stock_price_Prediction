@@ -4,87 +4,162 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <link rel="icon" href="img/favicon.png" type="image/png">
     <title>{% block title %}{% endblock title %}</title>
+    {% load static %}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'vendors/fontawesome/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendors/owl-carousel/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendors/animate-css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+
 </head>
-{% block style %}
-{% endblock style %}
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="font-size: 20px;">
-    <img class="mx-0" src="/static/logo.png" alt="" width="72" height="65" style="margin-left: 37%">
-    <a class="navbar-brand mx-5" href="/index" style="font-size: 25px; font-weight: bold">Stock Price Prediction</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left: 6%">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item {% block current_index %}{% endblock current_index %}">
-                <a class="nav-link" href="/index">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item {% block current_pre %}{% endblock current_pre %}">
-                <a class="nav-link" href="/pre">Latest Data</a>
-            </li>
+<!--================Header Menu Area =================-->
+<header class="header_area">
+    <div class="main_menu">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <a class="navbar-brand logo_h" href="index.html"><img src="img/logo.png" alt=""></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav menu_nav ml-auto">
+                        <li class="nav-item"><a class="nav-link" href="/index">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/pre">Latest data</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/forecast">Forecast</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/about">About us</a></li>
+                        <li class="nav-item submenu dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-haspopup="true" aria-expanded="false">My account</a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item"><a class="nav-link" href="/profile">My Profile</a></li>
+                                <li class="nav-item"><a class="nav-link" href="/admin">Log in as Admin</a></li>
+                            </ul>
+                        </li>
 
-            <li class="nav-item {% block current_about %}{% endblock current_about %}">
-                <a class="nav-link" href="/about">About us</a>
-            </li>
-            <li class="nav-item {% block current_contact %}{% endblock current_contact %}">
-                <a class="nav-link" href="/contact">Contact us</a>
-            </li>
-            <li class="nav-item {% block current_forecast %}{% endblock current_forecast %}">
-                <a class="nav-link" href="/forecast">Forecast</a>
-            </li>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">
-                    My Account
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/admin">Login as Admin</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="/logout">Log Out</a></div>
+                        <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="right-button">
+                    <ul>
 
-
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+                        <li><a class="sign_up" href="/logout">Log out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </div>
-</nav>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show p-2 m-1" role="alert">
+                <strong>{{ message }}</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        {% endfor %}
+    {% endif %}
+</header>
+<!--================Header Menu Area =================-->
 
 
-{% if messages %}
-    {% for message in messages %}
-        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
-            <strong>{{ message }}</strong>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-    {% endfor %}
-{% endif %}
-<br>
-<br>
+<!--================Hero Banner Area Start =================-->
+<section class="hero-banner d-flex align-items-center">
+    <div class="container text-center">
+        <h2>{% block title1 %}{% endblock title1 %}</h2>
+        <nav aria-label="breadcrumb" class="banner-breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/index">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{% block title2 %}{% endblock title2 %}</li>
+            </ol>
+        </nav>
+    </div>
+</section>
+<!--================Hero Banner Area End =================-->
 {% block body %}{% endblock body %}
+
+
+<!-- ================ start footer Area ================= -->
+<footer class="footer-area">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-3 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
+                <h4>About Us</h4>
+                <p>Stock price prediction using machine learning algorithm based on past data of stocks.</p>
+                <div class="footer-logo">
+                    <img src="img/logo.png" alt="">
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
+                <h4>Contact Info</h4>
+                <div class="footer-address">
+                    <p>Address :No. 20,
+                        Vallabh Vidyanagar,
+                        District: Anand. PIN 388120
+                        Gujarat, India. </p>
+                    <span>Phone : +91 8000711872</span>
+                    <span>Email : principal@bvmengineering.ac.in </span>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
+                <h4>Important Link</h4>
+                <ul>
+                    <li><a href="/pre">Latest Data</a></li>
+                    <li><a href="/forecast">Forecast</a></li>
+                    <li><a href="/profile">My Account</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact us</a></li>
+                </ul>
+            </div>
+
+
+        <div class="footer-bottom row align-items-center text-center text-lg-left no-gutters">
+            <p class="footer-text m-0 col-lg-8 col-md-12">
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                All rights reserved
+            </p>
+            <div class="col-lg-5 col-md-12 text-center text-lg-right footer-social">
+                <a href="#"><i class="ti-facebook"></i></a>
+                <a href="#"><i class="ti-twitter-alt"></i></a>
+                <a href="#"><i class="ti-dribbble"></i></a>
+                <a href="#"><i class="ti-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- ================ End footer Area ================= -->
+
+
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-</body>
+<script src="{% static 'js/jquery-2.2.4.min.js' %}"></script>
+<script src="{% static 'js/popper.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'owl.carousel.min.js' %}"></script>
+<script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
+<script src="{% static 'js/waypoints.min.js' %}"></script>
+<script src="{% static 'js/mail-script.js' %}"></script>
+<script src="{% static 'js/contact.js' %}"></script>
+<script src="{% static 'js/jquery.form.js' %}"></script>
+<script src="{% static 'js/jquery.validate.min.js' %}"></script>
+<script src="{% static 'js/mail-script.js' %}"></script>
+<script src="{% static 'js/theme.js' %}"></script>
 
+</body>
 </html>

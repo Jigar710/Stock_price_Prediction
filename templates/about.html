@@ -1,6 +1,69 @@
 {% extends 'base.html' %}
 {% block title %}About{% endblock title %}
+{% block title1 %}About{% endblock title1 %}
+{% block title2 %}About{% endblock title2 %}
 {% block body %}
-    <h1>This is about.html</h1>
-{% block current_about %}active{% endblock current_about %}
+
+    <h2 class="text-center mt-lg-3"><u style="color: #0a2b1d">About</u></h2>
+    <div class="container my-lg-5" style="font-size: 18px;">
+        In the past decades, there is an increasing interest in predicting markets among economists, policymakers,
+        academics and market makers. The objective of the proposed work is to study and improve the supervised learning
+        algorithms to predict the stock price.
+        <br>This project will be implemented in Python. The system must be able to access a list of historical prices by
+        nsepy python module. It must calculate the estimated price of stock based on the historical data. It must also
+        provide an instantaneous visualization of the market index.
+        <br><br>
+            <h3>Login:</h3>
+        <br>
+        The first page that users will encounter will be the login page. All users will be required to either login to
+        an existing account or sign up for a new one. This page will show a simple box with two input areas where the
+        user can enter their user name and password. Underneath this input are two buttons next to each other. The left
+        button will be the Login button and the button next to it is the Sign-up button.
+        <br>
+        Clicking the Login button will either bring you to the home page if you entered the correct username and
+        password or it will just refresh the login page with an error stating that you have entered your credentials
+        wrong.
+
+        <br><br>
+        <h3>Sign Up / Registration:</h3>
+        <br>
+        On the login page, if a user is not already registered, they can sign up to create a new account by clicking on
+        the Sign-up button. When clicked, this button will bring them to the registration page where they will be able
+        to create a username and password. They will also be required to enter an email address and optionally enter
+        their name.
+        <br><br>
+        <h3>UI design:</h3>
+        <br>
+        User interface should be easy to use and user friendly for any system. UI is main attraction of any system. In
+        the project user interact with the system through UI. User interface through user can get desired result very
+        quickly and easily by just one click. The purpose of this module is to provide the user interface and view
+        functions for the system. This is the system with which the user directly interacts and get prediction data.
+        This module is created to provide the user interface to the system.
+        <br><br>
+
+        <h3>Stock search:</h3>
+        <br>
+        Through this user can search stocks which are registered under NSE. To get information about stocks, current
+        trend of stock and predictions about stock, user has to search about the require stock by its name through the
+        search bar. It is easy and convenient way to search about anything for user.
+        <br><br>
+        <h3> Table and graph formation:</h3>
+        <br><br>
+        This section is where the graph of the stock’s historical and prediction data will be displayed. The graph will
+        have an indicator of the current data and which points on the graph represent the stock prediction. Underneath
+        this section, will be a smaller section that will show the open, high, low, and current value of the stock for
+        that given hour or however long we decide to refresh the data.
+
+        <br><br>
+
+        <h3> Price prediction:</h3>
+        <br>
+        Back side of system UI there should be a mechanism which find the prediction price for user. This mechanism is
+        algorithm which will work for user to give satisfactory output about stock, so the output of algorithm guide
+        user to invest in particular stocks. So, user can minimize the risk associated with stock market trading.
+
+
+    </div>
+
+
 {% endblock body %}

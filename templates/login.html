@@ -1,3 +1,7 @@
+{% extends 'base.html' %}
+{% block title %}Login{% endblock title %}
+{% block title1 %}Login{% endblock title1 %}
+{% block title2 %}Login{% endblock title2 %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -9,7 +13,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>{% block title %}{% endblock title %}</title>
+
 </head>
 <style>
     .bd-placeholder-img {
@@ -75,47 +79,49 @@
     }
 </style>
 <body>
+{% block body %}
 
-{% if messages %}
-    {% for message in messages %}
-        <div class="alert alert-{{ message.tags }} alert-dismissible fade show fixed-top" role="alert">
-            <strong>{{ message }}</strong>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
+    <br>
+    <br>
+    <main class="form-signin">
+        <div class="container mw-25">
+            <form method="post">
+                {% csrf_token %}
+                <div class="row">
+                    <img class="mb-4 mx-auto" src="/static/logo.png" alt="" width="72" height="70"></div>
+                <div class="row">
+                    <h1 class="h3 mb-3 fw-normal mx-auto">Please sign in</h1></div>
+                <div class="form-row"><label for="inputEmail" class="visually-hidden">User</label>
+                    <input type="text" id="inputEmail" name="login_username" class="form-control"
+                           placeholder="User name"
+                           required autofocus></div>
+                <br>
+                <div class="form-row">
+                    <label for="inputPassword" class="visually-hidden">Password</label>
+                    <input type="password" id="inputPassword" name="login_password" class="form-control"
+                           placeholder="Password" required></div>
+                <div class="container text-center my-3">
+                    <button class="w-25 btn btn-lg btn-light my-4" type="submit">Sign in</button>
+                <a href="/register" class="w-25 btn btn-light btn-lg" tabindex="-1" role="button" aria-disabled="true">Don't have an account ?</a></div>
+
+            </form>
+
+            <p class="mt-5 mb-3 text-muted">&copy; 2021–2030</p>
         </div>
-    {% endfor %}
-{% endif %}
-<br>
-<br>
-<main class="form-signin">
-  <form method="post">
-      {% csrf_token %}
-    <img class="mb-4" src="/static/logo.png" alt="" width="72" height="70" style="margin-left: 35%">
-    <h1 class="h3 mb-3 fw-normal" style="margin-left: 20%">Please sign in</h1>
-    <label for="inputEmail" class="visually-hidden">User</label>
-    <input type="text" id="inputEmail" name="login_username" class="form-control" placeholder="User name" required autofocus>
-    <label for="inputPassword" class="visually-hidden mt-3">Password</label>
-    <input type="password" id="inputPassword" name="login_password" class="form-control" placeholder="Password" required>
+    </main>
 
-    </div>
-    <button class="w-100 btn btn-lg btn-primary my-4" type="submit">Sign in</button>
 
-  </form>
-    <a href="/register" class="w-100 btn btn-primary btn-lg" tabindex="-1" role="button" aria-disabled="true">Sign up</a>
-    <p class="mt-5 mb-3 text-muted">&copy; 2021–2030</p>
-</main>
-
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+{% endblock body %}
 </body>
 </html>

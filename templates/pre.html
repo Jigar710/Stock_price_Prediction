@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 {% block title %}Prediction{% endblock title %}
+{% block title1 %}Prediction{% endblock title1 %}
+{% block title2 %}Prediction{% endblock title2 %}
 {% block current_pre %}
     active{% endblock current_pre %}
 {% block body %}
@@ -13,7 +15,53 @@
                     <option value="ADANIPORTS" selected>Adani Ports and Special Economic Zone Ltd.</option>
                     <option value="ASIANPAINT">Asian Paints Ltd.</option>
                     <option value="AXISBANK">Axis Bank Ltd.</option>
-                    <option value="SBIN">SBIN</option>
+                     <option value="BAJAJ-AUTO">Bajaj Auto Ltd.</option>
+                    <option value="BAJFINANCE">Bajaj Finance Ltd.</option>
+                    <option value="BAJAJFINSV">Bajaj Finserv Ltd.</option>
+                    <option value="BPCL">Bharat Petroleum Corporation Ltd.</option>
+                    <option value="BHARTIARTL">Bharti Airtel Ltd.</option>
+                    <option value="BRITANNIA">Britannia Industries Ltd.</option>
+                    <option value="CIPLA">Cipla Ltd.</option>
+                    <option value="COALINDIA">Coal India Ltd.</option>
+                    <option value="DIVISLAB">Divi's Laboratories Ltd.</option>
+                    <option value="DRREDDY">Dr. Reddy's Laboratories Ltd.</option>
+                    <option value="EICHERMOT">Eicher Motors Ltd.</option>
+                    <option value="GAIL">GAIL (India) Ltd.</option>
+                    <option value="GRASIM">Grasim Industries Ltd.</option>
+                    <option value="HCLTECH">HCL Technologies Ltd.</option>
+                    <option value="HDFCBANK">HDFC Bank Ltd.</option>
+                    <option value="HDFCLIFE">HDFC Life Insurance Company Ltd.</option>
+                    <option value="HEROMOTOCO">Hero MotoCorp Ltd.</option>
+                    <option value="HINDALCO">Hindalco Industries Ltd.</option>
+                    <option value="HINDUNILVR">Hindustan Unilever Ltd.</option>
+                    <option value="HDFC">Housing Development Finance Corporation Ltd.</option>
+                    <option value="ICICIBANK">ICICI Bank Ltd.</option>
+                    <option value="ITC">ITC Ltd.</option>
+                    <option value="IOC">Indian Oil Corporation Ltd.</option>
+                    <option value="INDUSINDBK">IndusInd Bank Ltd.</option>
+                    <option value="INFY">Infosys Ltd.</option>
+                    <option value="JSWSTEEL">JSW Steel Ltd.</option>
+                    <option value="KOTAKBANK">Kotak Mahindra Bank Ltd.</option>
+                    <option value="LT">Larsen & Toubro Ltd.</option>
+                    <option value="M&M">Mahindra & Mahindra Ltd.</option>
+                    <option value="MARUTI">Maruti Suzuki India Ltd.</option>
+                    <option value="NTPC">NTPC Ltd.</option>
+                    <option value="NESTLEIND">Nestle India Ltd.</option>
+                    <option value="ONGC">Oil & Natural Gas Corporation Ltd.</option>
+                    <option value="POWERGRID">Power Grid Corporation of India Ltd.</option>
+                    <option value="RELIANCE">Reliance Industries Ltd.</option>
+                    <option value="SBILIFE">SBI Life Insurance Company Ltd.</option>
+                    <option value="SHREECEM">Shree Cement Ltd.</option>
+                    <option value="SBIN">State Bank of India</option>
+                    <option value="SUNPHARMA">Sun Pharmaceutical Industries Ltd.</option>
+                    <option value="TCS">Tata Consultancy Services Ltd.</option>
+                    <option value="TATAMOTORS">Tata Motors Ltd.</option>
+                    <option value="TATASTEEL">Tata Steel Ltd.</option>
+                    <option value="TECHM">Tech Mahindra Ltd.</option>
+                    <option value="TITAN">Titan Company Ltd.</option>
+                    <option value="UPL">UPL Ltd.</option>
+                    <option value="ULTRACEMCO">UltraTech Cement Ltd.</option>
+                    <option value="WIPRO">Wipro Ltd.</option>
                 </select>
             </div>
             <div class="form-group col-md-3">
@@ -25,7 +73,7 @@
         </form>
     </div>
 
-    <div class="container {{ visible }}"">
+    <div class="container {{ visible }}">
         <h2 class="text-center"><u>Latest <b style="color: crimson">{{ duration }}</b> data from <b style="color: darkred">{{ sym_name }}</b></u></h2><br>
         <table class="table table-dark table-striped">
             <thead>
